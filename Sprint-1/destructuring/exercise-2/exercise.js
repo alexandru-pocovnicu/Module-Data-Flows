@@ -76,3 +76,10 @@ for (let obj of hogwarts) {
     console.log(firstName, lastName);
   }
 }
+
+for (let obj of hogwarts) {
+  let { firstName, lastName,pet,occupation } = obj;
+  if (occupation === "Teacher"&& pet!==null) {
+    console.log(firstName, lastName);
+  }
+}
