@@ -14,4 +14,4 @@ function introduceYourself({name,age,favouriteFood}) {
   );
 }
 
-introduceYourself(personOne1);
+introduceYourself(personOne);
