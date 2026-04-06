@@ -1,5 +1,5 @@
-let order = [
-  { itemName: "Hot cakes", quantity: 1, unitPricePence: 232 },
+const order = [
+  { itemName: "Hot Cakes", quantity: 1, unitPricePence: 232 },
   { itemName: "Apple Pie", quantity: 2, unitPricePence: 139 },
   { itemName: "Egg McMuffin", quantity: 1, unitPricePence: 280 },
   { itemName: "Sausage McMuffin", quantity: 1, unitPricePence: 300 },
@@ -7,13 +7,15 @@ let order = [
   { itemName: "Hash Brown", quantity: 4, unitPricePence: 40 },
 ];
 
-for(let item of order){
-  let{itemName,quantity,unitPricePence}=item
-  let totalPence=quantity*unitPricePence
-  let totalPenceString=totalPence.toString()
-  let pence=totalPenceString.slice(-2)
-  let pounds=totalPenceString.slice(0,-2)
-  let total=`${pounds}.${pence}`
-  console.log(total);
-  
+const allPrices = [];
+for (const item of order) {
+  const { itemName, quantity, unitPricePence } = item;
+  const totalPence = quantity * unitPricePence;
+  const totalPenceString = totalPence.toString();
+  const pence = totalPenceString.slice(-2);
+  const pounds = totalPenceString.slice(0, -2);
+  const total = `${pounds}.${pence}`;
+  allPrices.push(totalPence);
+  const totalBill = allPrices.reduce((acc, curr) => acc + curr);
+  console.log(totalBill);
 }
