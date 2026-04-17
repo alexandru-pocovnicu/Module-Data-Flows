@@ -53,10 +53,9 @@ function Book(title, author, pages, check) {
 
 function render() {
   let table = document.getElementById("display");
- 
-  
+
   let rowsNumber = table.rows.length;
-   
+
   //delete old table
   for (let n = rowsNumber - 1; n > 0; n--) {
     table.deleteRow(n);
@@ -99,9 +98,12 @@ function render() {
     delButton.className = "btn btn-warning";
     delButton.innerHTML = "Delete";
     delButton.addEventListener("click", function () {
-      alert(`You've deleted title: ${myLibrary[i].title}`);
+      const deletedTitle = myLibrary[i].title;
       myLibrary.splice(i, 1);
       render();
+      setTimeout(function () {
+        alert(`You've deleted title: ${deletedTitle}`);
+      }, 0);
     });
   }
 }
