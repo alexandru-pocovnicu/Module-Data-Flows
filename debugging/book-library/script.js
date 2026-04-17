@@ -1,5 +1,8 @@
-let myLibrary = [];
-
+const myLibrary = [];
+const titleInput = document.getElementById("title");
+const authorInput = document.getElementById("author");
+const pagesInput = document.getElementById("pages");
+const readCheckbox = document.getElementById("check");
 window.addEventListener("load", function (e) {
   populateStorage();
 });
@@ -19,10 +22,7 @@ function populateStorage() {
   }
 }
 
-const titleInput = document.getElementById("title");
-const authorInput = document.getElementById("author");
-const pagesInput = document.getElementById("pages");
-const readCheckbox = document.getElementById("check");
+
 
 //check the right input from forms and if its ok -> add the new book (object in array)
 //via Book function and start render function
