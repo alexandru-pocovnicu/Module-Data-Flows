@@ -6,11 +6,11 @@ window.addEventListener("load", function (e) {
 
 function populateStorage() {
   if (myLibrary.length == 0) {
-    let book1 = new Book("Robison Crusoe", "Daniel Defoe", "252", true);
+    let book1 = new Book("Robison Crusoe", "Daniel Defoe", 252, true);
     let book2 = new Book(
       "The Old Man and the Sea",
       "Ernest Hemingway",
-      "127",
+      127,
       true
     );
     myLibrary.push(book1);
@@ -29,14 +29,15 @@ const readCheckbox = document.getElementById("check");
 function submit() {
   const titleValue = titleInput.value.trim();
   const authorValue = authorInput.value.trim();
-  const pagesValue = +pagesInput.value.trim();
+  const pagesValue = pagesInput.value.trim();
+  const pagesCount = Number(pagesValue);
 
   if (
     titleValue == "" ||
     authorValue == "" ||
     pagesValue == "" ||
-    pagesValue < 0 ||
-    !Number.isInteger(pagesValue)
+    pagesCount < 0 ||
+    !Number.isInteger(pagesCount)
   ) {
     alert("Please fill all fields!");
     return false;
@@ -44,7 +45,7 @@ function submit() {
     let book = new Book(
       titleValue,
       authorValue,
-      pagesValue,
+      pagesCount,
       readCheckbox.checked
     );
     myLibrary.push(book);
