@@ -22,8 +22,6 @@ function populateStorage() {
   }
 }
 
-
-
 //check the right input from forms and if its ok -> add the new book (object in array)
 //via Book function and start render function
 function submit() {
@@ -82,11 +80,8 @@ function render() {
     changeButton.className = "btn btn-success";
     wasReadCell.appendChild(changeButton);
     let readStatus = "";
-    if (myLibrary[i].check == false) {
-      readStatus = "No";
-    } else {
-      readStatus = "Yes";
-    }
+
+    myLibrary[i].check == false ? (readStatus = "No") : (readStatus = "Yes");
     changeButton.textContent = readStatus;
 
     changeButton.addEventListener("click", function () {
