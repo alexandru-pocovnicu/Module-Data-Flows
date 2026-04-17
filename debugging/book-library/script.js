@@ -29,14 +29,14 @@ const check = document.getElementById("check");
 function submit() {
   const titleValue = title.value.trim();
   const authorValue = author.value.trim();
-  const pagesValue = pages.value.trim();
+  const pagesValue = +pages.value.trim();
 
   if (
     titleValue == "" ||
     authorValue == "" ||
     pagesValue == "" ||
-    +pagesValue < 0 ||
-    !Number.isInteger(+pagesValue)
+    pagesValue < 0 ||
+    !Number.isInteger(pagesValue)
   ) {
     alert("Please fill all fields!");
     return false;
